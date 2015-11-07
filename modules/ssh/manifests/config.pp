@@ -5,7 +5,7 @@ class ssh::config {
     group => 'root',
     mode => 0600,
     source => "puppet:///modules/ssh/sshd_config",
-    require => Class["ssh::package"],
+    require => Class["ssh::install"],
     notify => Class["ssh::service"],
   }
 }
