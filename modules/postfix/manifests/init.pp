@@ -1,5 +1,3 @@
 class postfix {
-  include postfix::config
-  include postfix::config
-  include postfix::service
-} 
+  include postfix::install, postfix::config, postfix::service
+}
