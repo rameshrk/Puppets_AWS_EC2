@@ -1,6 +1,5 @@
 class ssh::install {
-  package { "openssh":
-    ensure => present,
+    package { $ssh::params::ssh_package_name:
+        ensure => installed,
   }
 }
-

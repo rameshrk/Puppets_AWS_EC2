@@ -1,16 +1,19 @@
 class ssh::params {
-  case $::osfamily {
+  case $operatingsystem {
     Solaris: {
       $ssh_package_name = 'openssh'
+      $ssh_service_config = '/etc/ssh/sshd_config'
+      $ssh_service_name = 'sshd'
     }
-    Debian: {
+    /(Ubuntu|Debian)/: {
       $ssh_package_name = 'openssh-server'
+      $ssh_service_config = '/etc/ssh/sshd_config'
+      $ssh_service_name = 'sshd'
     }
-    RedHat: {
+    /(RedHat|CentOS|Fedora)/: {
       $ssh_package_name = 'openssh-server'
-    }
-    default: {
-      fail("Module propuppet-ssh does not support osfamily: ${::osfamily}")
+      $ssh_service_config = '/etc/ssh/sshd_config'
+      $ssh_service_name = 'sshd'
     }
   }
-} 
+}
