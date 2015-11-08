@@ -1,26 +1,18 @@
-class mysql::install (
-  $user,
-  $group
-){
+class mysql::install {
+  package { [ 'mysql', 'mysql-server', 'mysql-libs', 'mysql-devel' ]:
+    ensure  => present,
+    require => User['mysql'],
+  }
 
-  $mysql_pkgs = ['mysql5',
-  'mysql5client',
-  'mysql5rt',
-  'mysql5test',
-  'mysql5devel' ]
+    user { 'mysql':
+      ensure  => present,
+      comment => 'MySQL user',
+          gid => 'mysql',
+        shell => '/bin/false',
+      require => Group['mysql'],
+    }
 
-  package { $mysql_pkgs:
-    ensure => present,
-    require => User[$user],
-  }
-  user { $user:
-    ensure => present,
-    comment => 'MySQL user',
-    gid => $group,
-    shell => '/bin/false',
-    require => Group[$group],
-  }
-  group { $group:
-    ensure => present,
-  }
-} 
+    group { 'mysql':
+      ensure => present,
+    }
+}
