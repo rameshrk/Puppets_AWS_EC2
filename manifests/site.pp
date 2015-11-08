@@ -5,11 +5,11 @@ node default {
 }
 
 node 'ec2-52-91-67-250.compute-1.amazonaws.com' {
-#  include sudo
-#  include apache
+  include sudo
+  include apache
 #  include mysql
 #  include postfix
-#  include ssh
+  include ssh
   file { "/tmp/hello3" :
     content => "hello bogotobogo.com"
   }
