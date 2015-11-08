@@ -1,6 +1,3 @@
 class ssh {
-  class { '::ssh::install': } ->
-  class { '::ssh::config': } ->
-  class { '::ssh::service':} ->
-  Class['ssh']
+    include ssh::params, ssh::install, ssh::config, ssh::service
 }
