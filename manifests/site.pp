@@ -2,6 +2,9 @@ node default {
   file { "/tmp/hello7" :
     content => "hello bogotobogo.com"
   }
+   package { 'httpd':
+        ensure => 'installed'
+       }
 }
 
 node 'ec2-52-91-67-250.compute-1.amazonaws.com' {
