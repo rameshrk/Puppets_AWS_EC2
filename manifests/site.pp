@@ -1,5 +1,5 @@
 node default {
-  file { "/tmp/hello2" :
+  file { "/tmp/hello7" :
     content => "hello bogotobogo.com"
   }
 }
