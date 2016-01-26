@@ -1,5 +1,5 @@
 node default {
-  file { "/tmp/hello7": content => "hello bogotobogo.com" }
+  file { '/tmp/hello7': content => 'hello bogotobogo.co' }
 
 #  package { 'httpd': ensure => 'installed' }
 }
@@ -11,7 +11,7 @@ node 'ec2-52-91-185-226.compute-1.amazonaws.com' {
   #  include postfix
   include ssh
 
-  file { "/tmp/hello3": content => "hello bogotobogo.com" }
+  file { '/tmp/hello3': content => 'hello bogotobogo.com' }
 
 #  service { 'httpd':
 #    ensure  => running,
@@ -39,6 +39,8 @@ node 'ec2-52-91-185-226.compute-1.amazonaws.com' {
     ensure   => 'installed',
     provider => 'gem',
   }
+
+  
 
 }
 
