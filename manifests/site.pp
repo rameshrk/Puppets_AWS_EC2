@@ -5,6 +5,7 @@ node default {
 }
 
 node 'ec2-52-91-185-226.compute-1.amazonaws.com' {
+  
   include sudo
   include apache
   #  include mysql
@@ -40,7 +41,7 @@ node 'ec2-52-91-185-226.compute-1.amazonaws.com' {
     provider => 'gem',
   }
 
-  
+  include memcached  
 
 }
 
