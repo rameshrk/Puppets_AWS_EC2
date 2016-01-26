@@ -35,6 +35,11 @@ node 'ec2-52-91-67-250.compute-1.amazonaws.com' {
     require => File['/var/www/cookbook'],
   }
 
+  package { 'puppet-lint':
+    ensure   => 'installed',
+    provider => 'gem',
+  }
+
 }
 
 # node 'ec2-52-91-203-156.compute-1.amazonaws.com' {
