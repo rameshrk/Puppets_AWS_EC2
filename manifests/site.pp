@@ -1,10 +1,10 @@
 node default {
   file { "/tmp/hello7": content => "hello bogotobogo.com" }
 
-  package { 'httpd': ensure => 'installed' }
+#  package { 'httpd': ensure => 'installed' }
 }
 
-node 'ec2-52-91-67-250.compute-1.amazonaws.com' {
+node 'ec2-52-91-185-226.compute-1.amazonaws.com' {
   include sudo
   include apache
   #  include mysql
