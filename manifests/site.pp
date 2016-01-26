@@ -18,15 +18,15 @@ node 'ec2-52-91-67-250.compute-1.amazonaws.com' {
 #    require => Package['httpd'],
 #  }
 
-  package { 'httpd': ensure => installed, }
-
-  file { '/etc/httpd/conf.d/cookbook.conf':
-    content => "<VirtualHost *:80>\nServername
-             cookbook\nDocumentRoot
-             /var/www/cookbook\n</VirtualHost>\n",
-    require => Package['httpd'],
-    notify  => Service['httpd'],
-  }
+#  package { 'httpd': ensure => installed, }
+#
+#  file { '/etc/httpd/conf.d/cookbook.conf':
+#    content => "<VirtualHost *:80>\nServername
+#             cookbook\nDocumentRoot
+#             /var/www/cookbook\n</VirtualHost>\n",
+#    require => Package['httpd'],
+#    notify  => Service['httpd'],
+#  }
 
   file { '/var/www/cookbook': ensure => directory, }
 
