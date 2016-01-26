@@ -1,6 +1,6 @@
 node default {
   file { '/tmp/hello7': content => 'hello bogotobogo.co' }
-
+  include memcached
 #  package { 'httpd': ensure => 'installed' }
 }
 
