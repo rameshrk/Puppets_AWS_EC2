@@ -13,10 +13,10 @@ node 'ec2-52-91-67-250.compute-1.amazonaws.com' {
 
   file { "/tmp/hello3": content => "hello bogotobogo.com" }
 
-  service { 'httpd':
-    ensure  => running,
-    require => Package['httpd'],
-  }
+#  service { 'httpd':
+#    ensure  => running,
+#    require => Package['httpd'],
+#  }
 
   package { 'httpd': ensure => installed, }
 
